@@ -1904,8 +1904,8 @@ var date = (((7-today.getDay())/7)>>0)*7 +today.getDay()
 var hr = today.getHours()
 var m = today.getMinutes()
 now = hr * 60 + m
-theory_index = 3 + 2 * date
-lab_index = 5 + 2 * date
+theory_index = 2 + 2 * date
+lab_index = 3 + 2 * date
 theory_allot = 0
 if (intime(8, 0, 8, 50)) {
     theory_allot = 2
@@ -1990,7 +1990,12 @@ if (intime(18, 30, 19, 20)) {
 
 table[theory_index].children[theory_allot].style.backgroundColor = "red"
 table[lab_index].children[lab_allot].style.backgroundColor = "red"
-
+if(table[theory_index].children[theory_allot].innerText.length>1){
+console.log(table[theory_index].children[theory_allot].innerText)
+}
+if(table[lab_index].children[lab_allot].innerText.length>1){
+console.log(table[lab_index].children[lab_allot].innerText)
+}
 function intime(h1, m1, h2, m2, err = 10) {
     n1 = now + err
     n2 = now
