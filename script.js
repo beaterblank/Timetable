@@ -119,7 +119,7 @@ if(ontime(8,0)||ontime(8,55)||ontime(9,50)||ontime(10,45)||ontime(11,40)||ontime
         showNotification("lab class",console.log(table[lab_index].children[lab_allot].innerText));
     }
     
- }}
+ }
 
  function intime(h1, m1, h2, m2, err = 10) {
      n1 = now + err
@@ -152,7 +152,7 @@ function ontime(h,m,err=5){
 
 
 function showNotification(title,body) {
-   if(document.visibilityState === "visible) {
+   if(document.visibilityState === "visible") {
        return;
    }
    icon = "https://miro.medium.com/max/1400/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg"
