@@ -1900,7 +1900,7 @@ setTimeout(function(){
 }, 50000);
 var table = document.getElementById("timeTableStyle").children[0].children
 var today = new Date();
-var date = (today.getDay() - 1) % 7
+var date = (today.getDay()==0)*7 +today.getDay()
 var hr = today.getHours()
 var m = today.getMinutes()
 now = hr * 60 + m
