@@ -1,14 +1,20 @@
+//reload after every 50000 ms
 setTimeout(function(){
     window.location.reload(1);
  }, 50000);
+//get the table from the html doc
  var table = document.getElementById("timeTableStyle").children[0].children
+ //get todays date
  var today = new Date();
  var date = (((7-today.getDay())/7)>>0)*7 +today.getDay()
+ //get time
  var hr = today.getHours()
  var m = today.getMinutes()
  now = hr * 60 + m
+//choose which in row in table
  theory_index = 2 + 2 * date
  lab_index = 3 + 2 * date
+//choosing colomns in the table
  theory_allot = 0
  if (intime(8, 0, 8, 50)) {
      theory_allot = 2
@@ -91,14 +97,18 @@ setTimeout(function(){
      lab_allot = 13
  }
  
+//change color of the current class to red
  table[theory_index].children[theory_allot].style.backgroundColor = "red"
  table[lab_index].children[lab_allot].style.backgroundColor = "red"
- if(table[theory_index].children[theory_allot].innerText.length>1){
+
+ if(table[theory_index].children[theory_allot].innerText.length>5){
  console.log(table[theory_index].children[theory_allot].innerText)
  }
- if(table[lab_index].children[lab_allot].innerText.length>1){
+
+ if(table[lab_index].children[lab_allot].innerText.length>5){
  console.log(table[lab_index].children[lab_allot].innerText)
  }
+
  function intime(h1, m1, h2, m2, err = 10) {
      n1 = now + err
      n2 = now
