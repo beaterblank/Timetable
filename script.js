@@ -1,7 +1,13 @@
+let permission = Notification.permission;
+
+
+
+
+
 //reload after every 50000 ms
 setTimeout(function(){
     window.location.reload(1);
- }, 50000);
+ }, 10000);
 //get the table from the html doc
  var table = document.getElementById("timeTableStyle").children[0].children
  //get todays date
@@ -100,14 +106,20 @@ setTimeout(function(){
 //change color of the current class to red
  table[theory_index].children[theory_allot].style.backgroundColor = "red"
  table[lab_index].children[lab_allot].style.backgroundColor = "red"
-
+if(ontime(8,0)||ontime(8,55)||ontime(9,50)||ontime(10,45)||ontime(11,40)||ontime(12,35)||ontime(2,0)||ontime(2,55)||ontime(3,50)||ontime(4,45)||ontime(5,40)||ontime(6,35)){
  if(table[theory_index].children[theory_allot].innerText.length>5){
- console.log(table[theory_index].children[theory_allot].innerText)
- }
+    if(permission === "granted") {
+        showNotification("CLASS!!",table[theory_index].children[theory_allot].innerText);
+    }
+    console.log()
+ }}
 
  if(table[lab_index].children[lab_allot].innerText.length>5){
- console.log(table[lab_index].children[lab_allot].innerText)
- }
+    if(permission === "granted") {
+        showNotification("lab class",console.log(table[lab_index].children[lab_allot].innerText));
+    }
+    
+ }}
 
  function intime(h1, m1, h2, m2, err = 10) {
      n1 = now + err
@@ -126,3 +138,27 @@ setTimeout(function(){
      }
      return false
  }
+
+
+function ontime(h,m,err=5){
+    n1 = now-err
+    n2 = now+err
+    l  = h*60+m
+    if(l>n1 && l<n2){
+        return true
+    }
+    return false
+}
+
+
+function showNotification(title,body) {
+   if(document.visibilityState === "visible) {
+       return;
+   }
+   icon = "https://miro.medium.com/max/1400/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg"
+   var notification = new Notification('Title', { body, icon });
+   notification.onclick = () => { 
+          notification.close();
+          window.parent.focus();
+   }
+}
