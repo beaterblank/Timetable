@@ -1,8 +1,8 @@
 let permission = Notification.permission;
-
-
-
-
+if(!permission){
+Notification.requestPermission().then(function (p) {
+    let permission = p;
+})};
 
 //reload after every 50000 ms
 setTimeout(function(){
