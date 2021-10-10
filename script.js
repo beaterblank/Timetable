@@ -1,13 +1,13 @@
 let permission = Notification.permission;
 if(permission=="default"){
 Notification.requestPermission().then(function (p) {
-    cosole.log(Notification.permission)
+    console.log(Notification.permission)
 })};
 if(permission=="denied"){
 Notification.requestPermission().then(function (p) {
     console.log(Notification.permission)
 })};
-let permission = Notification.permission;
+permission = Notification.permission;
 console.log(permission)
 //reload after every 50000 ms
 setTimeout(function(){
