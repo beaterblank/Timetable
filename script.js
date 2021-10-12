@@ -150,8 +150,10 @@ function ontime(h,m,err=5){
     n2 = now+err
     l  = h*60+m
     if(l>n1 && l<n2){
+        console.log(true)
         return true
     }
+    console.log(false)
     return false
 }
 
