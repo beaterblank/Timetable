@@ -121,7 +121,7 @@ if(ontime(8,0)||ontime(8,55)||ontime(9,50)||ontime(10,45)||ontime(11,40)||ontime
 
  if(table[lab_index].children[lab_allot].innerText.length>5){
     if(permission === "granted") {
-        showNotification("lab class",console.log(table[lab_index].children[lab_allot].innerHTML));
+        showNotification("lab!!",table[lab_index].children[lab_allot].innerHTML);
     }
     
  }
