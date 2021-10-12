@@ -161,6 +161,7 @@ function showNotification(title,body) {
        return;
    }
    icon = "https://miro.medium.com/max/1400/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg"
+   console.log(body)
    var notification = new Notification(title, { body, icon });
    notification.onclick = () => { 
           notification.close();
