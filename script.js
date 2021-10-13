@@ -12,7 +12,7 @@ console.log(permission)
 //reload after every 50000 ms
 setTimeout(function(){
     window.location.reload(1);
- }, 10000);
+ }, 300000);
 //get the table from the html doc
  var table = document.getElementById("timeTableStyle").children[0].children
  //get todays date
